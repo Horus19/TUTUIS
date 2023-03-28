@@ -1,3 +1,9 @@
 [submodule "AuthBackend_TUTUIS"]
 	path = AuthBackend_TUTUIS
 	url = https://github.com/Horus19/AuthBackend_TUTUIS.git
+[submodule "MailerBackend_TUTUIS"]
+	path = MailerBackend_TUTUIS
+	url = https://github.com/Horus19/MailerBackend_TUTUIS.git
+[submodule "DashBoard"]
+	path = DashBoard
+	url = https://github.com/Horus19/DashBoard.git
