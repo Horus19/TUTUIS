@@ -53,6 +53,29 @@ services:
     networks:
       - backend
 
+  socketbackend:
+    build:
+      context: ./Socket_Server_TUTUIS
+      dockerfile: Dockerfile
+    container_name: SocketBackend
+    environment:
+      PORT: 3001
+      DB_HOST: db
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: ${DB_PORT}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN}
+      MAILGUN_USERNAME: ${MAILGUN_USERNAME}
+      MAILGUN_PASSWORD: ${MAILGUN_PASSWORD}
+      BASE_URL: ${BASE_URL}
+    ports:
+      - "3003:3003"
+    restart: always
+    networks:
+      - backend
+
   dashboard:
     build:
       context: ./Dashboard
