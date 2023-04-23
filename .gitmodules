@@ -7,3 +7,6 @@
 [submodule "DashBoard"]
 	path = DashBoard
 	url = https://github.com/Horus19/DashBoard.git
+[submodule "Socket_Server_TUTUIS"]
+	path = Socket_Server_TUTUIS
+	url = https://github.com/Horus19/Socket_Server_TUTUIS
