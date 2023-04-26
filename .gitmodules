@@ -10,3 +10,6 @@
 [submodule "Socket_Server_TUTUIS"]
 	path = Socket_Server_TUTUIS
 	url = https://github.com/Horus19/Socket_Server_TUTUIS
+[submodule "Core_TUTUIS"]
+	path = Core_TUTUIS
+	url = https://github.com/Horus19/Core_TUTUIS.git
