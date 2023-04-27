@@ -25,6 +25,32 @@ services:
       BASE_URL: ${BASE_URL}
     networks:
       - backend
+  
+  corebackend:
+    depends_on:
+      - db
+    build:
+      context: ./Core_TUTUIS
+      dockerfile: Dockerfile
+    container_name: CoreBackend
+    restart: always
+    ports:
+      - "3004:3004"
+    environment:
+      PORT: 3004
+      DB_HOST: db
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: ${DB_PORT}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN}
+      MAILGUN_USERNAME: ${MAILGUN_USERNAME}
+      MAILGUN_PASSWORD: ${MAILGUN_PASSWORD}
+      BASE_URL: ${BASE_URL}
+    networks:
+      - backend
+    
 
   db:
     image: postgres:14.3
