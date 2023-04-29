@@ -8,6 +8,7 @@ services:
       context: ./AuthBackend_TUTUIS
       dockerfile: Dockerfile
     container_name: AuthBackend
+    image: horus19cdv/authbackend:latest
     restart: always
     ports:
       - "3001:3001"
@@ -33,6 +34,7 @@ services:
       context: ./Core_TUTUIS
       dockerfile: Dockerfile
     container_name: CoreBackend
+    image: horus19cdv/corebackend:latest
     restart: always
     ports:
       - "3004:3004"
@@ -70,6 +72,7 @@ services:
       context: ./MailerBackend_TUTUIS
       dockerfile: Dockerfile
     container_name: MailerBackend
+    image: horus19cdv/mailerbackend:latest
     environment:
       MAILGUN_USERNAME: ${MAILGUN_USERNAME}
       MAILGUN_PASSWORD: ${MAILGUN_PASSWORD}
@@ -84,6 +87,7 @@ services:
       context: ./Socket_Server_TUTUIS
       dockerfile: Dockerfile
     container_name: SocketBackend
+    image: horus19cdv/socketbackend:latest
     environment:
       PORT: 3001
       DB_HOST: db
@@ -107,11 +111,22 @@ services:
       context: ./Dashboard
       dockerfile: Dockerfile
     container_name: Dashboard
+    image: horus19cdv/dashboard:latest
     ports:
       - "80:80"
     restart: always
     networks:
       - frontend
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    container_name: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    networks:
+      - backend
       
 networks:
   backend:
