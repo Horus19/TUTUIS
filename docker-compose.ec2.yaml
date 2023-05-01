@@ -4,9 +4,6 @@ services:
   authbackend:
     depends_on:
       - db
-    build:
-      context: ./AuthBackend_TUTUIS
-      dockerfile: Dockerfile
     container_name: AuthBackend
     image: horus19cdv/authbackend:latest
     restart: always
@@ -32,9 +29,6 @@ services:
   corebackend:
     depends_on:
       - db
-    build:
-      context: ./Core_TUTUIS
-      dockerfile: Dockerfile
     container_name: CoreBackend
     image: horus19cdv/corebackend:latest
     restart: always
@@ -70,9 +64,6 @@ services:
       - backend
 
   mailerbackend:
-    build:
-      context: ./MailerBackend_TUTUIS
-      dockerfile: Dockerfile
     container_name: MailerBackend
     image: horus19cdv/mailerbackend:latest
     environment:
@@ -87,9 +78,6 @@ services:
       - backend
 
   socketbackend:
-    build:
-      context: ./Socket_Server_TUTUIS
-      dockerfile: Dockerfile
     container_name: SocketBackend
     image: horus19cdv/socketbackend:latest
     environment:
@@ -111,9 +99,6 @@ services:
       - backend
 
   dashboard:
-    build:
-      context: ./Dashboard
-      dockerfile: Dockerfile
     container_name: Dashboard
     image: horus19cdv/dashboard:latest
     ports:
