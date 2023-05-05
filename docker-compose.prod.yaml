@@ -26,6 +26,7 @@ services:
       MAIL_HOST: ${MAIL_HOST}
       MAIL_REMITENTE: ${MAIL_REMITENTE}
       BASE_URL: ${BASE_URL}
+      RABBIT_HOST: amqp://rabbitmq
     networks:
       - backend
   
