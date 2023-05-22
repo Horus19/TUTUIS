@@ -53,6 +53,7 @@ services:
       MAILGUN_USERNAME: ${MAILGUN_USERNAME}
       MAILGUN_PASSWORD: ${MAILGUN_PASSWORD}
       BASE_URL: ${BASE_URL}
+      RABBIT_HOST: amqp://rabbitmq
     networks:
       - backend
     
